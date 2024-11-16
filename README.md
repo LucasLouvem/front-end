@@ -51,9 +51,9 @@ Atualmente, estou focado em:
 
 ---
 
-## 📂 Sistemas Operacionais de Destaque
+## 📂 Sistemas Operacionais em Destaque
 
-Aqui estão alguns dos meus sistemas que utilizo em meu computador,:
+Aqui estão alguns dos meus sistemas que utilizo em meu computador:
 
 - Sistema Principal;
 
