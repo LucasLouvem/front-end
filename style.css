@@ -5,6 +5,7 @@ body{
     color: #ffffff;
     background-color: #1e1e1e;
 }
+
 .container{
     width: 90%;
     max-width: 1200px;
@@ -17,17 +18,21 @@ body{
     padding: 100px 20px;
     background: linear-gradient( 45deg, #6a1b9a, #283593);
 }
+
 .hero h1{
     font-size: 3rem;
     margin-bottom: 10px;
 }
+
 .hero .criador{
     color: #ffd700;
 }
+
 .hero .subtitulo{
     font-size: 1.2rem;
     margin-bottom: 20px;
 }
+
 .botoes .botao {
     display: inline-block;
     margin: 10px;
@@ -43,6 +48,7 @@ body{
 section{
     padding: 60px 20px;
 }
+
 h2{
     text-align: center;
     font-size: 2rem;
@@ -53,6 +59,7 @@ ul{
     list-style-type: none;
     padding: 0;
 }
+
 .projetos{
     background: #2e2e2e;
     padding: 20px;
@@ -77,10 +84,12 @@ ul{
     margin: 0 auto;
     display: block;
 }
+
 footer{
     background-color: #283593;
     padding: 10px;
 }
+
 footer p{
     margin-top: 3px;
     text-align: center;
@@ -88,10 +97,11 @@ footer p{
     font-weight: bold;
     font-size: 1.2rem;
 }
+
 a:hover{
     color:rgb(254, 254, 254)0;
 }
+
 .contato{
     padding: 0px;
-    
 }
