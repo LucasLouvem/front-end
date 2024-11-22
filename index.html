@@ -1,107 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Meu Portfólio - Lucas, Desenvolvedor e Explorador De Tecnologia.">
-    <meta name="author" content="LucasLouvem">
-    <title>Explorador Tech</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clone do Instagram</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Sessão do Heroi-->
-    <header class="hero">
-        <div class="container">
-            <img src="https://plus.unsplash.com/premium_photo-1661877737564-3dfd7282efcb?q=80&w=2100&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Computador em cima da pedra" class="barraTopo">
-            <h1>Olá, Me chamo <span class="criador">Lucas!</span></h1>
-            <p class="subtitulo">Explorador de Tecnologia e Desenvolvedor em evolução</p>
-            <nav class="botoes">
-                <a href="#" class="botao">Sobre mim</a>
-                <a href="#" class="botao">Projetos</a>
-                <a href="#" class="botao">Contato</a>
-            </nav>
-        </div>
-    </header>
-    
-    <!--Sobre Mim-->
-    <section id="sobreMim" class="sobreMim">
-        <div class="container">
-            <h2>Sobre Mim</h2>
-            <div class="about-content">
-                <p style="text-align: center;">Sou um Desenvolvedor apaixonado por Tecnologia, possuindo um aprendizado contínuo e tentando ter soluções criativas.</p>
-                <img src="https://scontent-gig4-2.xx.fbcdn.net/v/t39.30808-6/263694910_941049010140738_137120493489913859_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGMA6Z2QbKUZTDJBEJoj4V4imPysbNKDNiKY_Kxs0oM2KWF9DnHyGvJTLolM8dfJF5piesaxM20iBR9rHaZUs2E&_nc_ohc=WGq_z8f2R7QQ7kNvgGJqt97&_nc_zt=23&_nc_ht=scontent-gig4-2.xx&_nc_gid=AQMDFMSBOffZQH2Sl9bV_p2&oh=00_AYDl85EZ48F6qLNoq-MUH2HvPrP6ukt9HHuVTwg9aQzywQ&oe=673ED005" alt="Foto Minha Dormindo" class="sobreImage">
-            </div>
-        </div>
-    </section>
-    
-    <!--Habilidades-->
-    <section class="habilidades">
-        <div class="container">
-            <h2>Habilidades Técnicas</h2>
-            <ul class="lista-habilidades">
-                <li>
-                    <img src="https://img.icons8.com/?  size=100&id=7gdY5qNXaKC0&format=png&color=000000" alt="css" width="30px">
-                    <br>
-                    <li>CSS3</li>
-                </li>
-                <li>
-                    <img src="https://img.icons8.com/?size=100&id=20909&format=png&color=000000" alt="html" width="30px">
-                    <br>
-                    <li>HTML5</li>
-                </li>
-                <li>
-                    <img src="https://img.icons8.com/?size=100&id=108784&format=png&color=000000" alt="JS logo" width="30px">
-                    <br>
-                    <li>Javascript</li>
-                </li>
-                <li>Python, C#</li>
-                <li>Segurança da Informação</li>
-                <li>Git e GitHub</li>
-            </ul>
-        </div>
-    </section>
+  <header>
+    <nav class="navbar">
+      <h1>Instagram Clone</h1>
+      <input type="text" placeholder="Pesquisar...">
+    </nav>
+  </header>
 
-    <!--Projetos-->
-    <section class="projetos">
-        <div class="container">
-            <h2>Meus Projetos</h2>
-            <div class="projeto">
-                <img src="#" alt="Primeiro Projeto">
-                <h3>Projeto 1 (Quando Tiver)</h3>
-                <p>Descrição do p1</p>
-                <a href="#" class="botao">Ver no GitHub</a>
-            </div>
-            <div class="projeto">
-                <img src="#" alt="Segundo Projeto">
-                <h3>Projeto 2(Quando Tiver)</h3>
-                <p>Descrição do p2</p>
-                <a href="#" class="botao">Ver no GitHub</a>
-            </div>
+  <main>
+    <section class="feed">
+      <!-- Post 1 -->
+      <div class="post">
+        <div class="post-header">
+          <img src="https://placehold.co/50x50" alt="User" class="user-icon">
+          <span>@usuario1</span>
         </div>
-    </section>
-    
-    <!--Contato-->
-    <section id="contato">
-        <div class="container">
-            <h2>Contato</h2>
-            <p>Entre em Contato por:</p>
-            <ul>
-                <li>
-                    Email:<a href="mailto:lucaslouvem2@gmail.com">lucaslouvem2@gmail.com</a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/lucas-gomes-da-silva-louvem-a872b7212/" target="_blank" rel="noopener noreferrer">Linkedin</a>
-                </li>
-                <li>
-                    <a href="https://github.com/LucasLouvem">GitHub</a>
-                </li>
-            </ul>
+        <img src="https://placehold.co/500x300" alt="Post" class="post-image">
+        <div class="post-actions">
+          <button>❤️ Curtir</button>
+          <button>💬 Comentar</button>
         </div>
+        <p class="post-description"><strong>@usuario1</strong> Adorando este dia!</p>
+        <input type="text" class="comment-input" placeholder="Adicione um comentário...">
+      </div>
+
+      <!-- Post 2 -->
+      <div class="post">
+        <div class="post-header">
+          <img src="https://placehold.co/50x50" alt="User" class="user-icon">
+          <span>@usuario2</span>
+        </div>
+        <img src="https://placehold.co/500x300" alt="Post" class="post-image">
+        <div class="post-actions">
+          <button>❤️ Curtir</button>
+          <button>💬 Comentar</button>
+        </div>
+        <p class="post-description"><strong>@usuario2</strong> Um lugar incrível para relaxar.</p>
+        <input type="text" class="comment-input" placeholder="Adicione um comentário...">
+      </div>
     </section>
-    <footer class="rodape">
-    <p>&copy; Todos os direitos reservados a <a href="https://github.com/LucasLouvem" class="reservado">Lucas Louvem.</a></p>
-    </footer>
+  </main>
+
+  <footer>
+    <p>Feito para prática!</p>
+  </footer>
 </body>
-<script src="app.js"></script>
 </html>
