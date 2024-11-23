@@ -1,13 +1,13 @@
 import express from "express";
-import { postList } from "../controlle/postControllers.js";
+import { postAdd, postList } from "../controlle/postControllers.js";
 
 const routes = (app) =>{
+
+    app.use(express.json());
     
-    app.get("/", (req, res)=>{
-        res.status(200).send("<h1>Bom Dia</h1><img src='https://placecats.com/300/200?fit=contain&position=top'>")
-    });
+    app.get("/posts", postList);
     
-    app.get("/:id", postList);
+    app.post("/posts", postAdd);
 }
 
 export default routes
