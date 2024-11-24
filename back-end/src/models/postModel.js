@@ -32,7 +32,7 @@ export async function postUpdating(id, newPost) {
     
     const collection = db.collection("posts");
 
-    const objID = ObjectId.createFromHexString 
+    const objID = ObjectId.createFromHexString(id); 
     
-    return collection.updateOne(id, );
+    return collection.updateOne({_id: new ObjectId(objID)}, {$set: newPost});
 }

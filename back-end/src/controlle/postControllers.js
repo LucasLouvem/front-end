@@ -1,7 +1,9 @@
 // Importa funções específicas do modelo `postModel` para lidar com os dados
-import { getAllPosts, createNewPost } from "../models/postModel.js";
+import { getAllPosts, createNewPost, postUpdating } from "../models/postModel.js";
 // Importa o módulo `fs` para manipular o sistema de arquivos
 import fs from "fs";
+
+import gerarDescricaoComGemini from "../services/geminiService.js";
 
 // Controlador para listar todos os posts
 export async function postList(req, res) {
@@ -25,7 +27,7 @@ export async function postAdd(req, res) {
         // Retorna uma mensagem de erro com o status 500 (Erro interno do servidor)
         res.status(500).json({ "Erro": "Falha na requisição" });
     }
-}
+};
 
 // Controlador para upload de arquivos e criação de post relacionado
 export async function postUpload(req, res) {
@@ -37,9 +39,9 @@ export async function postUpload(req, res) {
     };
     try {
         // Cria um novo post chamando a função `create` do modelo
-        const postCreated = await create(newPost);
+        const postCreated = await createNewPost(newPost);
         // Renomeia o arquivo carregado para incluir o ID do post criado
-        const archiveUpdate = `uploads/${postCreated.insertedId}.png`;
+        const archiveUpdate = `upload/${postCreated.insertedId}.png`;
         fs.renameSync(req.file.path, archiveUpdate); // Atualiza o nome do arquivo no sistema de arquivos
         // Retorna o post criado com o status 200 (OK)
         res.status(200).json(postCreated);
@@ -49,25 +51,26 @@ export async function postUpload(req, res) {
         // Retorna uma mensagem de erro com o status 500 (Erro interno do servidor)
         res.status(500).json({ "Erro": "Falha na requisição" });
     }
-}
+};
 
 export async function postUpdate(req, res) {
     const id = req.params.id; 
-    const urlImage = `http://localhost:3000/${id}.png`
-    const update = {
-        imagem: urlImage,
-        descricao: req.body.descricao,
-        alt: req.body.alt
-    }
+    const urlImage = `http://localhost:3000/${id}`;
+    
     try {
-        
-        const postUpdating = await create(newPost);
-        
+        const imageBuffer = fs.readFileSync(`upload/${id}.png`);
+        const descricao = await gerarDescricaoComGemini(imageBuffer);
+        const post = {
+            imagem: urlImage,
+            descricao: descricao,
+            alt: req.body.alt
+        };
+        const postCreated = await postUpdating(id, post);
         res.status(200).json(postCreated);
     } catch (error) {
         
         console.error(error.message);
         
         res.status(500).json({ "Erro": "Falha na requisição" });
-    }
-}
+    };
+};
