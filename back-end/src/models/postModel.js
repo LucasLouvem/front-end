@@ -1,4 +1,5 @@
 // Importa a função `postAdd` do controlador de posts
+import { ObjectId } from 'mongodb';
 import { postAdd } from '../controlle/postControllers.js';
 // Importa a função para conectar ao banco de dados MongoDB
 import connectDatabase from '../mongo.js';
@@ -17,11 +18,21 @@ export async function getAllPosts() {
 }
 
 // Função para criar um novo post
-export async function create(newPost) {
+export async function createNewPost(newPost) {
     // Seleciona o banco de dados "imersao-instabytes"
     const db = connecting.db("imersao-instabytes");
     // Seleciona a coleção "posts"
     const collection = db.collection("posts");
     // Insere o novo post na coleção e retorna o resultado da operação
     return collection.insertOne(newPost);
+}
+
+export async function postUpdating(id, newPost) {
+    const db = connecting.db("imersao-instabytes");
+    
+    const collection = db.collection("posts");
+
+    const objID = ObjectId.createFromHexString 
+    
+    return collection.updateOne(id, );
 }
